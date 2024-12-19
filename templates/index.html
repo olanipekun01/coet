@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COET</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-white">
+
+  <!-- Top Bar -->
+  <div class="bg-[#00923f] text-white py-2">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Phone icon SVG --></svg> +234 (0) 000 0000</span>
+        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Mail icon SVG --></svg> info@achievers.edu.ng</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Facebook icon SVG --></svg></a>
+        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Twitter icon SVG --></svg></a>
+        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- LinkedIn icon SVG --></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center  w-[90px] ">
+            <div class="text-[#00923f] font-bold text-[16px] w-[180px] leading-none text-center">
+                College of <br />Engineering &<br />  Technology
+            </div>
+          <img src="/assets/achieverslogo.png" alt="Faculty Logo" class="h-12 w-auto">
+          
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-gray-800 font-medium hover:text-[#926868]">HOME</a>
+          <a href="./pages/aboutUs.html" class="text-gray-800 font-medium hover:text-[#926868]">ABOUT</a>
+          <a href="https://achievers.edu.ng/undergraduate_programmes/" class="text-gray-800 font-medium hover:text-[#926868]">Admission</a>
+          <a href="/pages/principalofficers.html" class="text-gray-800 font-medium hover:text-[#926868]">Principal Officiers</a>
+          <a href="/pages/staff.html" class="text-gray-800 font-medium hover:text-[#926868]">Staff</a>
+          <a href="./pages/contact.html" class="text-gray-800 font-medium hover:text-[#926868]">CONTACT</a>
+        </nav>
+        <button class="text-gray-800"><svg class="h-5 w-5"><!-- Search icon SVG --></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <!-- <div class="relative h-[500px] bg-gradient-to-r from-blue-900/90 to-blue-800/90"> -->
+    <div class="relative h-[500px] bg-gradient-to-r from-[#04481b] to-[#00923f]"> 
+    <div class="absolute inset-0 bg-[url('./assets/hero_home_bg.jpg?height=500&width=1920')] bg-cover bg-center mix-blend-overlay"></div>
+    <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white relative z-10">
+      <img src="/assets/achieverslogo.png?height=80&width=80" alt="University Logo" class="mb-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        College of Engineering & Technology
+      </h1>
+      <p class="text-xl mb-8">Innovating the Future through Technology</p>
+      <a href="#" class="bg-[#00923f] hover:bg-[#04481b] text-white py-2 px-4 rounded">Explore Our Programs</a>
+    </div>
+  </div>
+
+  <!-- Quick Links -->
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="https://achievers.edu.ng/undergraduate_programmes/" class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <span class="font-medium">Admission</span>
+          <svg class="h-5 w-5 text-[#FFA500]"><!-- Chevron icon SVG --></svg>
+        </a>
+
+        <a href="./pages/principalofficers.html" class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <span class="font-medium">Principal Officers</span>
+          <svg class="h-5 w-5 text-[#FFA500]"><!-- Chevron icon SVG --></svg>
+        </a>
+
+        <a href="./pages/staff.html" class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <span class="font-medium">Staff Directory</span>
+          <svg class="h-5 w-5 text-[#FFA500]"><!-- Chevron icon SVG --></svg>
+        </a>
+        <!-- Repeat similar structure for other links -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Welcome to the College of Medicine</h2>
+          <p class="text-gray-600 mb-4">
+            Welcome to the College of Medicine, Achievers University, Owo—an institution dedicated to producing world-class medical professionals equipped with scientific expertise, practical skills, and a commitment to excellence in healthcare delivery.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Established as part of Achievers University's visionary expansion, the College encompasses three dynamic faculties: Basic Medical Sciences, Basic Clinical Sciences, and Clinical Sciences, offering the prestigious MBBS programme. With robust academic curricula tailored to meet national and international standards, our mission is to train medical doctors capable of addressing healthcare challenges with skill, compassion, and innovation.
+          </p>
+          <a href="./pages/aboutUs.html" class="bg-[#00923f] hover:bg-[#04481b] text-white py-2 px-4 rounded">Learn More About Us</a>
+        </div>
+        <div class="relative">
+          <img src="/assets/provost_office.jpg" alt="Faculty Building" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="https://achievers.edu.ng/undergraduate_programmes/" class="hover:text-[#926868]">Admission</a></li>
+            <li><a href="./pages/principalofficers.html" class="hover:text-[#926868]">Principal Officers</a></li>
+            <li><a href="./pages/staff.html" class="hover:text-[#926868]">Staff Directory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li>Email: info@achievers.edu.ng</li>
+            <li>Phone: +234 (0) 000 0000</li>
+            <li>KM 1 ldasen/Uteh Road, Owo, Ondo</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-[#926868]">Facebook</a>
+            <a href="#" class="hover:text-[#926868]">Twitter</a>
+            <a href="#" class="hover:text-[#926868]">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>&copy; <span id="currentYear"></span> College of Medicine. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+</div>
+
+    <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

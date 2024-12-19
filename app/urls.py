@@ -9,14 +9,14 @@ from django.conf.urls.static import static
 
 
 
-app_name = "resultchecker"
+app_name = "app"
 
 urlpatterns = [
-    path('', views.Courses, name="course"),
+    path('', views.Index, name="index"),
 
-    path('success/', TemplateView.as_view(template_name='success.html'), name='success_page'),
-    path('accounts/login/', views.login_view, name="login_view"),
-    path('accounts/logout/', views.logout, name="logout"),
+    # path('success/', TemplateView.as_view(template_name='success.html'), name='success_page'),
+    # path('accounts/login/', views.login_view, name="login_view"),
+    # path('accounts/logout/', views.logout, name="logout"),
 
 
    

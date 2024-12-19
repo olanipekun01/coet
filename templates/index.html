@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,11 +37,11 @@
         </div>
         <nav class="hidden md:flex items-center space-x-8">
           <a href="/" class="text-gray-800 font-medium hover:text-[#926868]">HOME</a>
-          <a href="./pages/aboutUs.html" class="text-gray-800 font-medium hover:text-[#926868]">ABOUT</a>
+          <a href="./pages/about" class="text-gray-800 font-medium hover:text-[#926868]">ABOUT</a>
           <a href="https://achievers.edu.ng/undergraduate_programmes/" class="text-gray-800 font-medium hover:text-[#926868]">Admission</a>
-          <a href="/pages/principalofficers.html" class="text-gray-800 font-medium hover:text-[#926868]">Principal Officiers</a>
-          <a href="/pages/staff.html" class="text-gray-800 font-medium hover:text-[#926868]">Staff</a>
-          <a href="./pages/contact.html" class="text-gray-800 font-medium hover:text-[#926868]">CONTACT</a>
+          <a href="/pages/principalofficers" class="text-gray-800 font-medium hover:text-[#926868]">Principal Officiers</a>
+          <a href="/pages/staff" class="text-gray-800 font-medium hover:text-[#926868]">Staff</a>
+          <a href="./pages/contact" class="text-gray-800 font-medium hover:text-[#926868]">CONTACT</a>
         </nav>
         <button class="text-gray-800"><svg class="h-5 w-5"><!-- Search icon SVG --></svg></button>
       </div>
@@ -50,9 +51,9 @@
   <!-- Hero Section -->
   <!-- <div class="relative h-[500px] bg-gradient-to-r from-blue-900/90 to-blue-800/90"> -->
     <div class="relative h-[500px] bg-gradient-to-r from-[#04481b] to-[#00923f]"> 
-    <div class="absolute inset-0 bg-[url('./assets/hero_home_bg.jpg?height=500&width=1920')] bg-cover bg-center mix-blend-overlay"></div>
+    <div class="absolute inset-0 bg-[url({% static './assets/hero_home_bg.jpg' %})] bg-cover bg-center mix-blend-overlay"></div>
     <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white relative z-10">
-      <img src="/assets/achieverslogo.png?height=80&width=80" alt="University Logo" class="mb-6">
+      <img src="{% static './assets/achieverslogo.png' %}" alt="University Logo" class="mb-6 h-[80px] w-[80px]">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">
         College of Engineering & Technology
       </h1>
@@ -99,7 +100,7 @@
           <a href="./pages/aboutUs.html" class="bg-[#00923f] hover:bg-[#04481b] text-white py-2 px-4 rounded">Learn More About Us</a>
         </div>
         <div class="relative">
-          <img src="/assets/provost_office.jpg" alt="Faculty Building" class="rounded-lg shadow-lg">
+          <img src="{% static './assets/provost_office.jpg' %}" alt="Faculty Building" class="rounded-lg shadow-lg">
         </div>
       </div>
     </div>

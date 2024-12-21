@@ -1,75 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College of Medicine</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-white">
+{% extends 'base.html' %}
 
-  <!-- Top Bar -->
-  <div class="bg-[#4A0000] text-white py-2">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Phone icon SVG --></svg> +234 (0) 000 0000</span>
-        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Mail icon SVG --></svg> info@achievers.edu.ng</span>
-      </div>
-      <div class="flex items-center space-x-4">
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Facebook icon SVG --></svg></a>
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Twitter icon SVG --></svg></a>
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- LinkedIn icon SVG --></svg></a>
-      </div>
-    </div>
-  </div>
+{% load static %}
 
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-20">
-        <div class="flex items-center  w-[90px] ">
-            <div class="text-[#4A0000] font-bold text-[16px] w-[180px] leading-none text-center">
-                College <br />of<br /> Medicine
-              </div>
-          <img src="/assets/achieverslogo.png" alt="Faculty Logo" class="h-12 w-auto">
-          
-        </div>
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="/" class="text-gray-800 font-medium hover:text-[#926868]">HOME</a>
-          <a href="./aboutUs.html" class="text-gray-800 font-medium hover:text-[#926868]">ABOUT</a>
-          <a href="https://achievers.edu.ng/undergraduate_programmes/" class="text-gray-800 font-medium hover:text-[#926868]">Admission</a>
-          <a href="./principalofficers.html" class="text-gray-800 font-medium hover:text-[#926868]">Principal Officiers</a>
-          <a href="./staff.html" class="text-gray-800 font-medium hover:text-[#926868]">Staff</a>
-          <a href="./contact.html" class="text-gray-800 font-medium hover:text-[#926868]">CONTACT</a>
-        </nav>
-        <button class="text-gray-800"><svg class="h-5 w-5"><!-- Search icon SVG --></svg></button>
-      </div>
-    </div>
-  </header>
+{% block title %}About - COET{% endblock %}
 
-  <div class="relative h-[300px] bg-gradient-to-r from-[#5c1d1d] to-[#926868]">
+{% block content %}
+
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
     <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
     <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">About US</h1>
     </div>
   </div>
 
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+          <img src="{% static './assets/lab2.jpg' %}" alt="Faculty Building" class="rounded-lg shadow-lg">
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-[#00923f] mb-6">About the College of Engineering and Technology</h2>
+          <p class="text-gray-600 mb-4">
+            The College of Engineering and Technology (COET) at Achievers University, Owo, is a distinguished center for engineering education, established in 2017 with approval from the National Universities Commission (NUC). Our mission is to produce highly skilled engineers with a broad scientific foundation, practical expertise, and a strong entrepreneurial spirit to contribute to national and global development.
+          </p>
+          <p class="text-gray-600 mb-4">
+            <span>The College offers robust Bachelor of Engineering (B.Eng.) programmes in the following disciplines:</span>
+            
+          </p>
+          <ul class="list-disc text-gray-600 px-4 -mt-[17px] mb-4">
+            <li class="">Biomedical Engineering</li>
+            <li class="">Civil and Environmental Engineering</li>
+            <li class="">Computer Engineering</li>
+            <li class="">Electrical and Electronics Engineering</li>
+            <li class="">Mechanical Engineering</li>
+            <li class="">Mechatronics Engineering</li>
+          </ul>
+          
+          
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-8 bg-[#04481b] text-white text-center flex flex-col items-center">
+    <span class="mb-5">Our programmes are designed to provide a comprehensive blend of theoretical knowledge and hands-on practical training, ensuring graduates are prepared for careers in academia, industry, and research. Students engage in cutting-edge research projects and gain valuable exposure to real-world engineering applications.</span>
+    <a href="/apply" class="bg-[#fff] hover:bg-[#04481b] hover:border-white hover:border-[1px] hover:text-white text-[#00923f] py-2 px-4 rounded">Apply Now</a>
+  </section>
+
+  <section class="py-16 bg-[#00923f]">
+    <div class="container mx-auto px-4">
+      <!-- <h2 class="text-3xl font-bold text-center mb-12 text-[#00923f]">Why Choose Us</h2> -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
+          <h3 class="font-semibold text-lg mb-2 text-[#00923f]">Philosophy</h3>
+          <p class="text-gray-600">The College of Engineering and Technology is built on the philosophy of empowering engineers to apply scientific principles to real-life challenges, thereby improving the standard of living and sustaining human society. By integrating theory with practice, we aim to produce well-rounded engineers capable of thriving in a rapidly evolving technological world.</p>
+        </div>
+        <div class="group hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
+          <h3 class="font-semibold text-lg mb-2 text-[#00923f]">Vision</h3>
+          <p class="text-gray-600">To be the best university in Africa and among the world’s leading institutions, fostering excellence in engineering education and innovation.</p>
+        </div>
+        <div class="group hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
+          <h3 class="font-semibold text-lg mb-2 text-[#00923f]">Mission</h3>
+          <p class="text-gray-600">To provide a conducive environment for the development of competent, self-reliant, and globally relevant engineering graduates, equipped to meet the demands of modern industries and society.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
     <!-- About Us Content -->
     <section class="py-16">
         <div class="container mx-auto px-4">
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 text-[#00923f]">Objectives</h2>
+              
               <p class="text-gray-600 mb-4">
-                The mission is “to provide the enabling environment – physical and academic for the production of competent and quality graduates who would be self- reliant, highly productive and globally relevant in every sphere of human endeavour”.
+                The primary objectives of the College include:
               </p>
-              <p class="text-gray-600 mb-4">
-                The vision of Achievers is “to become the best university in Africa and indeed one of the best in the world”.
-              </p>
-              <button class="bg-[#4A0000] hover:bg-[#926868] text-white px-4 py-2 rounded">Learn More About Our Programs</button>
+
+              <ul class="list-decimal text-gray-600 px-4 -mt-[17px] mb-4">
+                <li class="">Training engineers with a balanced scientific and practical foundation for professional excellence.</li>
+                <li class="">Developing graduates who are responsive to the engineering needs of their environment and capable of solving complex problems.</li>
+                <li class="">Equipping students with the tools to design and produce engineering devices and solutions for societal benefit.</li>
+                <li class="">Fostering analytical, logical, and innovative thinking to address engineering challenges.</li>
+                <li class="">Preparing graduates for employment in diverse sectors, including public services, private industries, research institutes, and self-employment.</li>
+                <li class="">Encouraging further studies in specialized areas of science and technological innovation.</li>
+                <li class="">Building entrepreneurial capacity among graduates to engage in income-generating ventures.</li>
+              </ul>
+              
+              <a href="/department" id="hiddenLink1" style="display: none;"></a>
+         
+              <button onclick="document.getElementById('hiddenLink1').click();" class="bg-[#04481b] hover:bg-[#00923f] text-white px-4 py-2 rounded">Learn More About Our Programs</button>
             </div>
             <div>
-              <img src="/assets/provost_office.jpg" alt="Faculty Building" class="rounded-lg shadow-lg w-full h-auto" />
+              <img src="{% static './assets/lab1.jpg' %}" alt="Faculty Building" class="rounded-lg shadow-lg w-full h-auto" />
             </div>
           </div>
         </div>
@@ -77,9 +103,9 @@
     
 
       <!-- Key Features -->
-  <section class="py-16 bg-gray-50">
+  <!-- <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 text-[#00923f]">Why Choose Us</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="group hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
           <h3 class="font-semibold text-lg mb-2">Expert Faculty</h3>
@@ -91,74 +117,32 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
     
     
       <!-- Testimonial -->
-  <section class="py-16">
+  <!-- <section class="py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-8">What Our Students Say</h2>
+        <h2 class="text-3xl font-bold mb-8 text-[#00923f]">What Our Students Say</h2>
         <blockquote class="text-xl italic text-gray-600 mb-4">
             "The College of Medicine has equipped me with hands-on clinical experience and a deep understanding of patient care. The supportive environment has helped me grow academically and professionally."
         </blockquote>
         <cite class="text-gray-900 font-semibold">- John Smith, MBBS Student, Class of 2023</cite>
       </div>
     </div>
-  </section>
+  </section> -->
 
     <!-- Call to Action -->
-    <section class="py-16 bg-[#926868] text-white text-center">
+    <section class="py-16 bg-[#04481b] text-white text-center">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold mb-4">Ready to Join Us?</h2>
-          <p class="text-xl mb-8">Take the first step towards a rewarding career in medicine and surgery 0.</p>
-          <button class="bg-white text-[#926868] hover:bg-gray-100 px-4 py-2 rounded">Apply Now</button>
+          <p class="text-xl mb-8">At the College of Engineering and Technology, we are committed to nurturing the next generation of engineers who will shape the future and drive progress across industries and societies.</p>
+          <a href="/apply" id="hiddenLink" style="display: none;"></a>
+          <button onclick="document.getElementById('hiddenLink').click();" class="bg-white text-[#926868] hover:bg-gray-100 px-4 py-2 rounded">Apply Now</button>
         </div>
       </section>
     
 
-  
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="https://achievers.edu.ng/undergraduate_programmes/" class="hover:text-[#926868]">Admission</a></li>
-            <li><a href="./principalofficers.html" class="hover:text-[#926868]">Principal Officers</a></li>
-            <li><a href="./staff.html" class="hover:text-[#926868]">Staff Directory</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Contact</h3>
-          <ul class="space-y-2">
-            <li>Email: info@achievers.edu.ng</li>
-            <li>Phone: +234 (0) 000 0000</li>
-            <li>KM 1 ldasen/Uteh Road, Owo, Ondo</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="hover:text-[#926868]">Facebook</a>
-            <a href="#" class="hover:text-[#926868]">Twitter</a>
-            <a href="#" class="hover:text-[#926868]">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-        <p>&copy; <span id="currentYear"></span> College of Medicine. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-  
-</div>
-
-    <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+{% endblock %}

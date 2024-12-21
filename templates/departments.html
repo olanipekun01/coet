@@ -1,53 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College of Medicine | Departments</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-white">
+{% extends 'base.html' %}
 
-  <!-- Top Bar -->
-  <div class="bg-[#FFA500] text-white py-2">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Phone icon SVG --></svg> +234 (0) 000 0000</span>
-        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Mail icon SVG --></svg> info@faculty.edu</span>
-      </div>
-      <div class="flex items-center space-x-4">
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Facebook icon SVG --></svg></a>
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Twitter icon SVG --></svg></a>
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- LinkedIn icon SVG --></svg></a>
-      </div>
-    </div>
-  </div>
+{% load static %}
 
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-20">
-        <div class="flex items-center  w-[90px] ">
-            <div class="text-[#FFA500] font-bold text-[16px] w-[180px] leading-none text-center">
-                College <br />of<br /> Medicine
-              </div>
-          <img src="/assets/achieverslogo.png" alt="Faculty Logo" class="h-12 w-auto">
-          
-        </div>
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="/" class="text-gray-800 font-medium hover:text-[#FFA500]">HOME</a>
-          <a href="/about" class="text-gray-800 font-medium hover:text-[#FFA500]">ABOUT</a>
-          <a href="/departments" class="text-gray-800 font-medium hover:text-[#FFA500]">DEPARTMENTS</a>
-          <a href="/programs" class="text-gray-800 font-medium hover:text-[#FFA500]">PROGRAMS</a>
-          <a href="/research" class="text-gray-800 font-medium hover:text-[#FFA500]">RESEARCH</a>
-          <a href="/contact" class="text-gray-800 font-medium hover:text-[#FFA500]">CONTACT</a>
-        </nav>
-        <button class="text-gray-800"><svg class="h-5 w-5"><!-- Search icon SVG --></svg></button>
-      </div>
-    </div>
-  </header>
+{% block title %}Departments - COET{% endblock %}
 
-  <div class="relative h-[300px] bg-gradient-to-r from-blue-900/90 to-blue-800/90">
+{% block content %}
+
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
     <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
     <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Departments</h1>
@@ -65,106 +24,8 @@
 
 
   
-  
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="/programs" class="hover:text-[#FFA500]">Programs</a></li>
-            <li><a href="/admission" class="hover:text-[#FFA500]">Admission</a></li>
-            <li><a href="/research" class="hover:text-[#FFA500]">Research</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Contact</h3>
-          <ul class="space-y-2">
-            <li>Email: info@faculty.edu</li>
-            <li>Phone: +234 (0) 000 0000</li>
-            <li>Location: University Campus</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="hover:text-[#FFA500]">Facebook</a>
-            <a href="#" class="hover:text-[#FFA500]">Twitter</a>
-            <a href="#" class="hover:text-[#FFA500]">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-        <p>&copy; <span id="currentYear"></span> College of Medicine. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-  
-</div>
+  {% endblock %}
 
-    <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    const departments = [
-    {
-      name: "Department of Economics",
-      description: "Offering comprehensive programs in economic theory and policy analysis.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      name: "Department of Accounting",
-      description: "Providing cutting-edge education in financial accounting, auditing, and taxation.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      name: "Department of Business Administration",
-      description: "Preparing future business leaders with a focus on management and organizational behavior.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      name: "Department of Banking and Finance",
-      description: "Specializing in financial markets, institutions, and risk management.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      name: "Department of Marketing",
-      description: "Exploring contemporary marketing strategies and consumer behavior.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      name: "Department of Human Resource Management",
-      description: "Focusing on strategic human resource practices and organizational development.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-  ];
-
-  const departmentContainer = document.getElementById("departments");
-
-  departments.forEach((dept) => {
-    const card = document.createElement("div");
-    card.className = "overflow-hidden border rounded-lg shadow-md";
-
-    card.innerHTML = `
-      <img src="${dept.image}" alt="${dept.name}" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h2 class="text-xl font-bold mb-2">${dept.name}</h2>
-        <p class="text-gray-600 mb-4">${dept.description}</p>
-        <a 
-          href="/departments/${dept.name.toLowerCase().replace(/\s+/g, '-')}" 
-          class="text-[#f56642] hover:text-[#d14d2d] flex items-center"
-        >
-          Learn More
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-    `;
-
-    departmentContainer.appendChild(card);
-  });
-  </script>
-
-</body>
-</html>
+  {% block extra_scripts %}
+  <script type="text/javascript" src="{% static 'js/departments.js' %}"></script>
+  {% endblock %}

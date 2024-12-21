@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Admission - COET{% endblock %}
+
+{% block content %}
+
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-center text-[#000051] mb-8">Admission Requirements</h1>
+
+    <div class="border rounded-lg shadow-md p-4 mb-8">
+      <div class="text-2xl text-[#000051] font-bold mb-2">General Information</div>
+      <div class="text-gray-700">
+        Admission into the programmes is either through Unified Tertiary Matriculation Examination (UTME) or direct entry.
+      </div>
+    </div>
+
+    <div class="border rounded-lg shadow-md mb-8">
+      <div class="accordion-item border-b">
+        <button class="accordion-trigger flex items-center justify-between w-full py-4 text-lg font-semibold text-[#000051]" data-target="utme">
+          A. UTME Candidates
+          <span class="chevron">▼</span>
+        </button>
+        <div id="utme" class="accordion-content hidden text-gray-700 px-4">
+          <p class="mb-4">
+            Candidates are required to have sat for the Unified Tertiary Matriculation Examination (UTME) with a minimum score as approved by NUC and JAMB. They must also obtain a minimum of five (5) credit passes at not more than two sittings in WAEC (SSCE)/NECO (SSCE) /GCE O/L, OR NABTEB.
+          </p>
+          <p class="mb-4">These should include:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>English Language</li>
+            <li>Mathematics</li>
+            <li>Physics</li>
+            <li>Chemistry</li>
+            <li>Any other acceptable science subject; preferably Biology, Further Mathematics; OR Technical Drawing</li>
+          </ul>
+          <p class="font-semibold">UTME Subjects: Physics, Chemistry, Mathematics and English Language</p>
+        </div>
+      </div>
+      <!-- Repeat similar structure for other accordion items -->
+    </div>
+
+    <div class="border rounded-lg shadow-md p-4">
+      <div class="text-2xl text-[#000051] font-bold mb-2">Programme Duration</div>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>The minimum duration of each of the programmes is ten (10) semesters for students admitted to 100 level through the UTME.</li>
+        <li>Eight (8) semesters for those admitted into 200 level by Direct Entry.</li>
+        <li>Six (6) semesters for those admitted into 300 level by Direct Entry.</li>
+        <li>A student that fails to graduate at the end of the normal academic session will not be allowed to exceed:
+          <ul class="list-disc pl-6 mt-2">
+            <li>A total of 15 semesters in the case of UTME entrants</li>
+            <li>13 semesters for candidates admitted through Direct Entry to 200 level</li>
+            <li>11 semesters for candidates admitted through Direct Entry to 300 level</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+  <script type="text/javascript" src="{% static 'js/admissionss.js' %}"></script>
+  {% endblock %}

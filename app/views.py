@@ -48,3 +48,37 @@ from django.contrib import messages
 # Create your views here.
 def Index(request):
     return render(request, "index.html")
+
+def About(request):
+    return render(request, "aboutUs.html")
+
+def PrincipalOfficers(request):
+    return render(request, "principalofficers.html")
+
+def Staff(request):
+    return render(request, "staff.html")
+
+def Contact(request):
+    return render(request, "contact.html")
+
+def Department(request):
+    return render(request, "departments.html")
+
+def EachDepartment(request, pk):
+    return render(request, "eachdepartment.html")
+
+def Amissions(request):
+    return render(request, "admissions.html")
+
+
+
+def Signup(request):
+    return render(request, "./authentication/signup.html")
+
+def Login(request):
+    return render(request, "./authentication/login.html")
+
+@login_required
+def logout(request):
+    auth.logout(request)
+    return redirect("/")

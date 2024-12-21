@@ -1,53 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College of Medicine</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-white">
+{% extends 'base.html' %}
 
-  <!-- Top Bar -->
-  <div class="bg-[#4A0000] text-white py-2">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Phone icon SVG --></svg> +234 (0) 000 0000</span>
-        <span class="flex items-center"><svg class="h-4 w-4 mr-2"><!-- Mail icon SVG --></svg> info@achievers.edu.ng</span>
-      </div>
-      <div class="flex items-center space-x-4">
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Facebook icon SVG --></svg></a>
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- Twitter icon SVG --></svg></a>
-        <a href="#" class="hover:text-orange-200"><svg class="h-4 w-4"><!-- LinkedIn icon SVG --></svg></a>
-      </div>
-    </div>
-  </div>
+{% load static %}
 
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-20">
-        <div class="flex items-center  w-[90px] ">
-            <div class="text-[#4A0000] font-bold text-[16px] w-[180px] leading-none text-center">
-                College <br />of<br /> Medicine
-              </div>
-          <img src="/assets/achieverslogo.png" alt="Faculty Logo" class="h-12 w-auto">
-          
-        </div>
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="/" class="text-gray-800 font-medium hover:text-[#926868]">HOME</a>
-          <a href="./aboutUs.html" class="text-gray-800 font-medium hover:text-[#926868]">ABOUT</a>
-          <a href="https://achievers.edu.ng/undergraduate_programmes/" class="text-gray-800 font-medium hover:text-[#926868]">Admission</a>
-          <a href="./principalofficers.html" class="text-gray-800 font-medium hover:text-[#926868]">Principal Officiers</a>
-          <a href="./staff.html" class="text-gray-800 font-medium hover:text-[#926868]">Staff</a>
-          <a href="./contact.html" class="text-gray-800 font-medium hover:text-[#926868]">CONTACT</a>
-        </nav>
-        <button class="text-gray-800"><svg class="h-5 w-5"><!-- Search icon SVG --></svg></button>
-      </div>
-    </div>
-  </header>
+{% block title %}Staff - COET{% endblock %}
 
-  <div class="relative h-[300px] bg-gradient-to-r from-[#5c1d1d] to-[#926868]">
+{% block content %}
+
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
     <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
     <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Staff Directory</h1>
@@ -62,107 +21,9 @@
 
   
 
+  {% endblock %}
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="https://achievers.edu.ng/undergraduate_programmes/" class="hover:text-[#926868]">Admission</a></li>
-            <li><a href="./principalofficers.html" class="hover:text-[#926868]">Principal Officers</a></li>
-            <li><a href="./staff.html" class="hover:text-[#926868]">Staff Directory</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Contact</h3>
-          <ul class="space-y-2">
-            <li>Email: info@achievers.edu.ng</li>
-            <li>Phone: +234 (0) 000 0000</li>
-            <li>KM 1 ldasen/Uteh Road, Owo, Ondo</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="hover:text-[#926868]">Facebook</a>
-            <a href="#" class="hover:text-[#926868]">Twitter</a>
-            <a href="#" class="hover:text-[#926868]">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-        <p>&copy; <span id="currentYear"></span> College of Medicine. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-  
-</div>
+  {% block extra_scripts %}
+  <script type="text/javascript" src="{% static 'js/staff.js' %}"></script>
+  {% endblock %}
 
-    <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    const staffMembers = [
-      {
-        name: "Dr. John Smith",
-        qualification: "Diploma",
-        designation: "Dental surgery Technician 1",
-        email: "jsmith@achievers.edu.ng",
-        image: "/placeholder.svg",
-      },
-      {
-        name: "Florence Adekunle",
-        qualification: "N.D",
-        designation: "Dental Health Technician",
-        email: "fadekunle@achievers.edu.ng",
-        image: "/placeholder.svg",
-      },
-      {
-        name: "Victoria Fasuan",
-        qualification: "B.Sc.,HND,ND",
-        designation: "Confidential Secretary",
-        email: "vfasuan@achievers.edu.ng",
-        image: "/placeholder.svg",
-      },
-    ];
-
-    const staffContainer = document.getElementById('staff-container');
-
-    staffMembers.forEach((staff) => {
-      const staffCard = `
-        <div class="overflow-hidden border rounded-lg">
-          <div class="grid md:grid-cols-[200px_1fr] gap-6">
-            <div class="bg-gray-100">
-              <img src="${staff.image}" alt="${staff.name}" class="w-full h-full object-cover">
-            </div>
-            <div class="p-6">
-              <div class="grid grid-cols-[120px_1fr] gap-4 items-baseline">
-                <span class="text-gray-500">NAME:</span>
-                <span class="font-medium">${staff.name}</span>
-
-                <span class="text-gray-500">QUALIFICATION:</span>
-                <span>${staff.qualification}</span>
-
-                <span class="text-gray-500">DESIGNATION:</span>
-                <span>${staff.designation}</span>
-
-                <span class="text-gray-500">E-MAIL:</span>
-                <a href="mailto:${staff.email}" class="text-blue-600 hover:underline">${staff.email}</a>
-
-                <div class="col-span-2 mt-4">
-                  <a href="/staff/${staff.name.toLowerCase().replace(/ /g, '-')}" class="text-[#FFA500] hover:text-orange-600 inline-flex items-center">
-                    → View Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-      staffContainer.innerHTML += staffCard;
-    });
-  </script>
-
-</body>
-</html>

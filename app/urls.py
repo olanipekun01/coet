@@ -24,6 +24,16 @@ urlpatterns = [
     path('about/', views.About, name="about"),
     path('principalofficers/', views.PrincipalOfficers, name="principalofficers"),
     path('admissions/', views.Amissions, name="admissions"),
+    path('admissions/', views.Amissions, name="admissions"),
+
+
+    path('apply/start/', views.ApplyStart, name="applystart"),
+    path('apply/1/', views.ApplyOne, name="applyone"),
+    path('apply/2/', views.ApplyTwo, name="applytwo"),
+    path('apply/3/', views.ApplyThree, name="applythree"),
+    path('apply/4/', views.ApplyFour, name="applyfour"),
+    path('apply/5/', views.ApplyFive, name="applyfive"),
+
     path('staff/', views.Staff, name="staff"),
     path('contact/', views.Contact, name="contact"),
     path('departments/', views.Department, name="department"),

@@ -71,6 +71,25 @@ def Amissions(request):
     return render(request, "admissions.html")
 
 
+def ApplyStart(request):
+    return render(request, "./apply/applystart.html")
+
+def ApplyOne(request):
+    return render(request, "./apply/apply1.html")
+
+def ApplyTwo(request):
+    return render(request, "./apply/apply2.html")
+
+def ApplyThree(request):
+    return render(request, "./apply/apply3.html")
+
+def ApplyFour(request):
+    return render(request, "./apply/apply4.html")
+
+def ApplyFive(request):
+    return render(request, "./apply/apply5.html")
+
+
 
 def Signup(request):
     return render(request, "./authentication/signup.html")

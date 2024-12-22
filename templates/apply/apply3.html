@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Application - COET{% endblock %}
+
+{% block content %}
+
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
+    <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
+    <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Application</h1>
+    </div>
+  </div>
+
+ <!-- Contact Content -->
+ <main class="container mx-auto px-4 py-12">
+    <div class="max-w-5xl mx-auto bg-white shadow rounded-lg p-8">
+        <form id="sponsorForm" class="space-y-8">
+            <!-- Name of Sponsor Section -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-[#000051]">Name of Sponsor</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="space-y-2">
+                        <label for="surname" class="block text-sm font-medium">Surname</label>
+                        <input id="surname" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="firstName" class="block text-sm font-medium">First Name</label>
+                        <input id="firstName" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="otherName" class="block text-sm font-medium">Other Name</label>
+                        <input id="otherName" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Occupation and Place of Work Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label for="occupation" class="block text-sm font-medium">Occupation</label>
+                    <input id="occupation" type="text" class="w-full border border-gray-300 rounded-lg p-2" required>
+                </div>
+                <div class="space-y-2">
+                    <label for="placeOfWork" class="block text-sm font-medium">Place of Work</label>
+                    <input id="placeOfWork" type="text" class="w-full border border-gray-300 rounded-lg p-2" required>
+                </div>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label for="telephone" class="block text-sm font-medium">Telephone Number</label>
+                    <input id="telephone" type="tel" class="w-full border border-gray-300 rounded-lg p-2" required>
+                </div>
+                <div class="space-y-2">
+                    <label for="email" class="block text-sm font-medium">Email Address</label>
+                    <input id="email" type="email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="hidden bg-green-100 border-green-500 text-green-800 p-4 rounded-lg flex items-center space-x-2">
+                <svg class="h-5 w-5 text-green-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4m0 6a9 9 0 11-18 0a9 9 0 0118 0z" />
+                </svg>
+                <span>Form submitted successfully</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-end">
+                <button type="submit" class="bg-[#04481b] text-white px-4 py-2 rounded hover:bg-[#00923f]">Save and Continue</button>
+            </div>
+        </form>
+    </div>
+</main>
+    
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Application - COET{% endblock %}
+
+{% block content %}
+
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
+    <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
+    <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Application</h1>
+    </div>
+  </div>
+
+ <!-- Contact Content -->
+ <main class="container mx-auto px-4 py-12">
+    <div class="max-w-5xl mx-auto bg-white shadow-md rounded p-6">
+        <h1 class="text-2xl font-bold text-[#000051] mb-6">Parents/Guardian Information</h1>
+        <form id="parentsForm" class="space-y-8">
+          <!-- Parent Section Template -->
+          <div id="father-section" class="space-y-4">
+            <h3 class="text-lg font-semibold text-[#000051]">Father's Information</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="space-y-2">
+                <label for="father-surname" class="block text-sm font-medium">Surname</label>
+                <input type="text" id="father-surname" name="father-surname" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="father-firstName" class="block text-sm font-medium">First Name</label>
+                <input type="text" id="father-firstName" name="father-firstName" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="father-otherName" class="block text-sm font-medium">Other Name</label>
+                <input type="text" id="father-otherName" name="father-otherName" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="father-occupation" class="block text-sm font-medium">Occupation</label>
+                <input type="text" id="father-occupation" name="father-occupation" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="father-placeOfWork" class="block text-sm font-medium">Place of Work</label>
+                <input type="text" id="father-placeOfWork" name="father-placeOfWork" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="father-telephone" class="block text-sm font-medium">Telephone Number</label>
+                <input type="tel" id="father-telephone" name="father-telephone" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="father-email" class="block text-sm font-medium">Email Address</label>
+                <input type="email" id="father-email" name="father-email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat the above section for Mother and Guardian with appropriate IDs -->
+          
+          <div id="mother-section" class="space-y-4">
+            <h3 class="text-lg font-semibold text-[#000051]">Mother's Information</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="space-y-2">
+                <label for="mother-surname" class="block text-sm font-medium">Surname</label>
+                <input type="text" id="mother-surname" name="mother-surname" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="mother-firstName" class="block text-sm font-medium">First Name</label>
+                <input type="text" id="mother-firstName" name="mother-firstName" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="mother-otherName" class="block text-sm font-medium">Other Name</label>
+                <input type="text" id="mother-otherName" name="mother-otherName" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="mother-occupation" class="block text-sm font-medium">Occupation</label>
+                <input type="text" id="mother-occupation" name="mother-occupation" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="mother-placeOfWork" class="block text-sm font-medium">Place of Work</label>
+                <input type="text" id="mother-placeOfWork" name="mother-placeOfWork" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="mother-telephone" class="block text-sm font-medium">Telephone Number</label>
+                <input type="tel" id="mother-telephone" name="mother-telephone" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="mother-email" class="block text-sm font-medium">Email Address</label>
+                <input type="email" id="mother-email" name="mother-email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+            </div>
+          </div>
+
+          <div id="guardian-section" class="space-y-4">
+            <h3 class="text-lg font-semibold text-[#000051]">Guardian's Information</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="space-y-2">
+                <label for="guardian-surname" class="block text-sm font-medium">Surname</label>
+                <input type="text" id="guardian-surname" name="guardian-surname" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="guardian-firstName" class="block text-sm font-medium">First Name</label>
+                <input type="text" id="guardian-firstName" name="guardian-firstName" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="guardian-otherName" class="block text-sm font-medium">Other Name</label>
+                <input type="text" id="guardian-otherName" name="guardian-otherName" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="guardian-occupation" class="block text-sm font-medium">Occupation</label>
+                <input type="text" id="guardian-occupation" name="guardian-occupation" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="guardian-placeOfWork" class="block text-sm font-medium">Place of Work</label>
+                <input type="text" id="guardian-placeOfWork" name="guardian-placeOfWork" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="guardian-telephone" class="block text-sm font-medium">Telephone Number</label>
+                <input type="tel" id="guardian-telephone" name="guardian-telephone" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+              <div class="space-y-2">
+                <label for="guardian-email" class="block text-sm font-medium">Email Address</label>
+                <input type="email" id="guardian-email" name="guardian-email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4" id="submission-alert" hidden>
+            <div class="flex items-center bg-green-100 border border-green-500 text-green-800 p-4 rounded">
+              <svg class="h-6 w-6 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m0 6a9 9 0 110-12 9 9 0 010 12z"></path></svg>
+              <span>Form submitted successfully</span>
+            </div>
+          </div>
+    
+          <div class="flex justify-end">
+            <button type="submit" class="bg-[#04481b] text-white px-4 py-2 rounded hover:bg-[#00923f]">Save and Continue</button>
+          </div>
+        </form>
+    </div>
+</main>
+    
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Application - COET{% endblock %}
+
+{% block content %}
+
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
+    <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
+    <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Application</h1>
+    </div>
+  </div>
+
+ <!-- Contact Content -->
+ <main class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg">
+        <div class="flex flex-row items-center justify-between px-6 py-4 border-b">
+          {% for message in messages %}
+            <h5 style="color: red">{{message}}</h5>
+          {% endfor %}
+          <h1 class="text-2xl font-bold text-[#000051]">
+            Application Status Update
+            <span class="text-sm font-normal text-gray-500 ml-2">(20 December 2024)</span>
+          </h1>
+          
+          {% if applicant.status == 'approved' %}
+            <a href="#" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-md">
+              Admitted? Download Admission Letter
+            </a>
+          {% endif %}
+        </div>
+        <form class="px-6 py-4 space-y-6" method="post" enctype="multipart/form-data" action="/apply/status/">
+          {% csrf_token %}
+          <div class="text-red-500">Instructions: Please complete all tasks before sending update</div>
+    
+          <!-- Payment Section -->
+          <div class="space-y-4">
+            <div class="bg-[#ffc107] text-black px-4 py-2 rounded-md font-semibold">
+              Payment for Application Form
+            </div>
+            <p class="text-gray-600 text-sm">
+              Screenshot and upload evidence of payment below showing: "Name of bank", "Amount", "Date of Payment"
+            </p>
+            <div class="border rounded-lg p-4">
+              <label for="payment-upload" class="cursor-pointer">
+                <!-- <div class="flex flex-col items-center justify-center gap-2 py-4">
+                  <svg class="h-8 w-8 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  <span class="text-sm text-gray-500">Click to upload payment evidence</span>
+                </div> -->
+                <input id="payment-upload" name="payment-upload" type="file" class="" accept="image/*,.pdf"  />
+              </label>
+            </div>
+          </div>
+    
+          <!-- JAMB Section -->
+          <div class="space-y-4">
+            <div class="bg-[#ffc107] text-black px-4 py-2 rounded-md font-semibold">
+              Upload JAMB Result
+            </div>
+            <p class="text-gray-600 text-sm">Please upload your JAMB result and update</p>
+            <div class="border rounded-lg p-4">
+              <label for="jamb-upload" class="cursor-pointer">
+                <!-- <div class="flex flex-col items-center justify-center gap-2 py-4">
+                  <svg class="h-8 w-8 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  <span class="text-sm text-gray-500">Click to upload JAMB result</span>
+                </div> -->
+                <input id="jamb-upload" name="jamb-upload" type="file" class="" accept="image/*,.pdf" />
+              </label>
+            </div>
+          </div>
+    
+          <!-- WAEC Section -->
+          <div class="space-y-4">
+            <div class="bg-[#ffc107] text-black px-4 py-2 rounded-md font-semibold">
+              Upload WAEC Result
+            </div>
+            <p class="text-gray-600 text-sm">Please upload your WAEC O/L result and update</p>
+            <div class="border rounded-lg p-4">
+              <label for="waec-upload" class="cursor-pointer">
+                <!-- <div class="flex flex-col items-center justify-center gap-2 py-4">
+                  <svg class="h-8 w-8 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  <span class="text-sm text-gray-500">Click to upload WAEC result</span>
+                </div> -->
+                <input id="waec-upload" name="waec-upload" type="file" class="" accept="image/*,.pdf" />
+              </label>
+            </div>
+          </div>
+
+    
+          <!-- Messages and Documents Section -->
+          <div class="space-y-4">
+            
+            <div class="flex gap-4">
+              <button class="flex-1 flex items-center justify-center border px-4 py-2 rounded-md">
+                <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Upload Document
+              </button>
+              
+            </div>
+          </div>
+        </form>
+
+        <div class="px-6 py-4 space-y-6">
+          <div class="text-gray-500">No Message(s)</div>
+          <div class="text-gray-500">Documents</div>
+          {% if credentials %}
+          <ul>
+            <li>Payment Evidence: {{ credentials.payment_upload.name|slice:"30:" }}</li>
+            <li>JAMB Result: {{ credentials.jamb_upload.name|slice:"26:" }}</li>
+            <li>WAEC Result: {{ credentials.waec_upload.name|slice:"26:" }}</li>
+          </ul>
+          {% else %}
+            <div class="text-gray-500">No Document(s)</div>
+          {% endif %}
+
+          <div class="text-gray-500">Documents</div>
+          {% if additional_files %}
+            <ul>
+              {% for file in additional_files %}
+              <li>{{file.name}}: {{ file.file.name|slice:"35:" }}</li>
+              {% endfor %}
+            </ul>
+          
+          {% else %}
+            <div class="text-gray-500">No Additional Document(s)</div>
+          {% endif %}
+        </div>
+
+        <form action="/apply/additional/" method="post" class="px-6 py-4 space-y-6" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="space-y-4">
+            <div class="bg-[#ffc107] text-black px-4 py-2 rounded-md font-semibold">
+              Additional File, if any
+            </div>
+            <p class="text-gray-600 text-sm">Please upload any other document</p>
+            <div class="border rounded-lg p-4">
+              <input type="text" name="file-name" placeholder="Enter file description (e.g., Additional Transcript)" class="w-full border rounded-md px-3 py-2">
+              <label for="waec-upload" class="cursor-pointer">
+                <!-- <div class="flex flex-col items-center justify-center gap-2 py-4">
+                  <svg class="h-8 w-8 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  <span class="text-sm text-gray-500">Click to upload WAEC result</span>
+                </div> -->
+                <input id="additional-upload" name="additional-upload" type="file" class="" accept="image/*,.pdf" />
+              </label>
+            </div>
+          </div>
+
+
+
+          <div class="flex gap-4">
+            
+            <button class="flex-1 flex items-center justify-center border px-4 py-2 rounded-md">
+              <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16l-4 4m0 0l-4-4m4 4V4" /></svg>
+              Upload Document
+            </button>
+            
+          </div>
+        </form>
+
+        <p style="text-align: center;">
+          <a href="/accounts/logout" style="color: red;">Logout</a>
+        </p>
+    </div>
+</main>
+    
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/javascript" src="{% static 'js/apply8.js' %}"></script>
+{% endblock %}
+

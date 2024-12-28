@@ -17,80 +17,172 @@
  <main class="container mx-auto px-4 py-12">
     <div class="max-w-5xl mx-auto bg-white shadow-md rounded-md p-6">
         <h1 class="text-2xl font-bold text-[#000051] mb-4">Educational Qualification</h1>
+
+        {% for message in messages %}
+            <h5 style="color: red">{{message}}</h5>
+        {% endfor %}
     
         <!-- O Level Section -->
         <div class="space-y-6">
-          <h3 class="text-lg font-semibold text-[#000051]">2. WASSCE/NECOSSCE/NABTEB O LEVEL</h3>
-    
-          <form id="oLevelForm" class="space-y-4">
+          
+          <form id="educationalQualificationForm" class="space-y-4" method="post" action="/apply/5/">
+            {% csrf_token %}
             <!-- School Name -->
-            <div>
-              <label for="oLevelSchool" class="block text-sm font-medium text-gray-700">Name of School</label>
-              <input
-                type="text"
-                id="oLevelSchool"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                required
-              />
-            </div>
-    
-            <!-- Address -->
-            <div>
-              <label for="oLevelAddress" class="block text-sm font-medium text-gray-700">Address</label>
-              <textarea
-                id="oLevelAddress"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                required
-              ></textarea>
-            </div>
-    
-            <!-- Centre -->
-            <div>
-              <label for="oLevelCentre" class="block text-sm font-medium text-gray-700">Centre</label>
-              <input
-                type="text"
-                id="oLevelCentre"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                required
-              />
-            </div>
-    
-            <!-- Date Range -->
-            <div class="grid grid-cols-2 gap-4">
+            <label>
+              <input type="radio" name="sitting" value="one" checked onchange="toggleSecondSitting()"> One Sitting
+            </label>
+            <label>
+              <input type="radio" name="sitting" value="two" onchange="toggleSecondSitting()"> Two Sittings
+            </label>
+            <div id="firstSitting">
+
+              <h3 class="text-lg font-semibold text-[#000051]">1. WASSCE/NECOSSCE/NABTEB O LEVEL</h3>
               <div>
-                <label for="oLevelFrom" class="block text-sm font-medium text-gray-700">From</label>
+                <label for="oLevelSchool1" class="block text-sm font-medium text-gray-700">Name of School</label>
                 <input
-                  type="date"
-                  id="oLevelFrom"
+                  type="text"
+                  id="oLevelSchool1"
+                  name="oLevelSchool1"
                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   required
                 />
               </div>
+      
+              <!-- Address -->
               <div>
-                <label for="oLevelTo" class="block text-sm font-medium text-gray-700">To</label>
+                <label for="oLevelAddress1" class="block text-sm font-medium text-gray-700">Address</label>
+                <textarea
+                  id="oLevelAddress1"
+                  name="oLevelAddress1"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  required
+                ></textarea>
+              </div>
+      
+              <!-- Centre -->
+              <div>
+                <label for="oLevelCentre1" class="block text-sm font-medium text-gray-700">Centre</label>
                 <input
-                  type="date"
-                  id="oLevelTo"
+                  type="text"
+                  id="oLevelCentre1"
+                  name="oLevelCentre1"
                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   required
                 />
               </div>
+      
+              <!-- Date Range -->
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="oLevelFrom1" class="block text-sm font-medium text-gray-700">From</label>
+                  <input
+                    type="date"
+                    id="oLevelFrom1"
+                    name="oLevelFrom1"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="oLevelTo1" class="block text-sm font-medium text-gray-700">To</label>
+                  <input
+                    type="date"
+                    id="oLevelTo1"
+                    name="oLevelTo1"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    required
+                  />
+                </div>
+              </div>
+      
+              <!-- Subjects and Grades Table -->
+              <div>
+                <table class="min-w-full divide-y divide-gray-200 border border-gray-300">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">#</th>
+                      <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Subjects</th>
+                      <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Grades</th>
+                    </tr>
+                  </thead>
+                  <tbody id="subjectsTable1" class="bg-white divide-y divide-gray-200">
+                    <!-- JavaScript will populate rows here -->
+                    
+                  </tbody>
+                </table>
+              </div>
             </div>
+            <div id="secondSitting" style="display: none;">
+              <h3 class="text-lg font-semibold text-[#000051]">2. WASSCE/NECOSSCE/NABTEB O LEVEL</h3>
+              <div>
+                <label for="oLevelSchool" class="block text-sm font-medium text-gray-700">Name of School</label>
+                <input
+                  type="text"
+                  id="oLevelSchool"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  
+                />
+              </div>
     
-            <!-- Subjects and Grades Table -->
-            <div>
-              <table class="min-w-full divide-y divide-gray-200 border border-gray-300">
-                <thead class="bg-gray-50">
-                  <tr>
-                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">#</th>
-                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Subjects</th>
-                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Grades</th>
-                  </tr>
-                </thead>
-                <tbody id="subjectsTable" class="bg-white divide-y divide-gray-200">
-                  <!-- JavaScript will populate rows here -->
-                </tbody>
-              </table>
+              <!-- Address -->
+              <div>
+                <label for="oLevelAddress" class="block text-sm font-medium text-gray-700">Address</label>
+                <textarea
+                  id="oLevelAddress"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  
+                ></textarea>
+              </div>
+    
+              <!-- Centre -->
+              <div>
+                <label for="oLevelCentre" class="block text-sm font-medium text-gray-700">Centre</label>
+                <input
+                  type="text"
+                  id="oLevelCentre"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  
+                />
+              </div>
+      
+              <!-- Date Range -->
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="oLevelFrom" class="block text-sm font-medium text-gray-700">From</label>
+                  <input
+                    type="date"
+                    id="oLevelFrom"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    
+                  />
+                </div>
+                <div>
+                  <label for="oLevelTo" class="block text-sm font-medium text-gray-700">To</label>
+                  <input
+                    type="date"
+                    id="oLevelTo"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    
+                  />
+                </div>
+              </div>
+    
+              <!-- Subjects and Grades Table -->
+              <div>
+                <table class="min-w-full divide-y divide-gray-200 border border-gray-300">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">#</th>
+                      <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Subjects</th>
+                      <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Grades</th>
+                    </tr>
+                  </thead>
+                  <tbody id="subjectsTable" class="bg-white divide-y divide-gray-200">
+                    <!-- JavaScript will populate rows here -->
+                     
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <div class="space-y-6">
@@ -107,6 +199,7 @@
                   </thead>
                   <tbody id="aLevelSubjects">
                     <!-- Rows dynamically generated by JS -->
+                     
                   </tbody>
                 </table>
               </div>
@@ -195,6 +288,10 @@
               
           </form>
         </div>
+        <p style="text-align: center;">
+          <a href="/accounts/logout" style="color: red;">Logout</a>
+        </p>
+    </div>
     </div>
 </main>
     

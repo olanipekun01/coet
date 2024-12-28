@@ -16,7 +16,11 @@
  <!-- Contact Content -->
  <main class="container mx-auto px-4 py-12">
     <h1 class="text-3xl font-bold mb-8">Apply Now</h1>
-    <form id="applicationForm" class="p-6 space-y-6">
+    {% for message in messages %}
+      <h5 style="color: red">{{message}}</h5>
+    {% endfor %}
+    <form id="applicationForm" class="p-6 space-y-6" method="post" action="/apply/1/">
+      {% csrf_token %}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             
           <!-- Input fields -->
@@ -58,7 +62,7 @@
           </div>
           <div class="space-y-2">
             <label for="denomination" class="text-sm font-medium">Denomination</label>
-            <select id="denomination" name="gender" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+            <select id="denomination" name="denomination" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
               <option value="christian">Christian</option>
               <option value="muslim">Muslim</option>
               <option value="traditional">Traditional</option>
@@ -81,12 +85,9 @@
             <label for="desiredProgram" class="text-sm font-medium">Desired Program</label>
             <select id="desiredProgram" name="desiredProgram" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
               <option value="" disabled selected>Select a program</option>
-              <option value="electricalElectronicsEngineering">B.Eng. Electrical & Electronics Engineering e</option>
-              <option value="computerEngineering">B.Eng. Computer Engineering</option>
-              <option value="mechatronicsEngineering">B.Eng. Mechatronics Engineering</option>
-              <option value="mechanicalEngineering">B.Eng. Mechanical Engineering</option>
-              <option value="biomedicalEngineering">B.Eng. Biomedical Engineering</option>
-              <option value="civilEnvironmentalEngineering">B.Eng. Civil and Environmental Engineering</option>
+              {% for programme in programmes %}
+              <option value="{{programme.id}}">{{programme.degree}} {{programme.name}}</option>
+              {% endfor %}
             </select>
           </div>
         </div>
@@ -94,11 +95,19 @@
           <label for="personalStatement" class="text-sm font-medium">Personal Statement</label>
           <textarea id="personalStatement" name="personalStatement" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required></textarea>
         </div> -->
-        <div id="alertMessage" class="hidden text-sm text-red-500"></div>
+        {% for message in messages %}
+        <div id="alertMessage" class="hidden text-sm text-red-500">{{message}}</div>
+        {% endfor %}
         <div class="flex justify-end">
-            <button type="submit" class="bg-[#04481b] text-white px-4 py-2 rounded hover:bg-[#00923f]">Save and Continue</button>
+            
+            <button type="submit" class="bg-[#04481b] text-white px-4 py-2 rounded hover:bg-[#00923f]">Next</button>
         </div>
     </form>
+
+    <p style="text-align: center;">
+      <a href="/accounts/logout" style="color: red;">Logout</a>
+    </p>
+</div>
 </main>
     
 {% endblock %}

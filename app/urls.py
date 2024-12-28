@@ -33,6 +33,10 @@ urlpatterns = [
     path('apply/3/', views.ApplyThree, name="applythree"),
     path('apply/4/', views.ApplyFour, name="applyfour"),
     path('apply/5/', views.ApplyFive, name="applyfive"),
+    path('apply/6/', views.ApplySix, name="applysix"),
+    path('apply/7/', views.ApplySeven, name="applyseven"),
+    path('apply/status/', views.ApplyStatus, name="applystatus"),
+    path('apply/additional/', views.upload_additional_file_view, name="upload_additional_file_view"),
 
     path('staff/', views.Staff, name="staff"),
     path('contact/', views.Contact, name="contact"),
@@ -40,6 +44,7 @@ urlpatterns = [
     path('dept/<str:pk>', views.EachDepartment, name="eachdepartment"),
     path('accounts/login/', views.Login, name="login"),
     path('accounts/signup/', views.Signup, name="signup"),
+    path('accounts/logout/', views.logout, name="logout"),
 
     # path('success/', TemplateView.as_view(template_name='success.html'), name='success_page'),
     # path('accounts/login/', views.login_view, name="login_view"),

@@ -16,22 +16,30 @@
  <!-- Contact Content -->
  <main class="container mx-auto px-4 py-12">
     <div class="max-w-5xl mx-auto bg-white shadow rounded-lg p-8">
-        <form id="sponsorForm" class="space-y-8">
+        <div class="mb-6">
+            <h1 class="text-2xl font-bold text-[#000051]">Sponsor</h1>
+        </div>
+        {% for message in messages %}
+            <h5 style="color: red">{{message}}</h5>
+        {% endfor %}
+        <form id="sponsorForm" class="space-y-8" method="post" action="/apply/3/">
+            {% csrf_token %}
             <!-- Name of Sponsor Section -->
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold text-[#000051]">Name of Sponsor</h3>
+                
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="space-y-2">
                         <label for="surname" class="block text-sm font-medium">Surname</label>
-                        <input id="surname" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+                        <input id="surname" name="surname" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
                     </div>
                     <div class="space-y-2">
                         <label for="firstName" class="block text-sm font-medium">First Name</label>
-                        <input id="firstName" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+                        <input id="firstName" name="first_name" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
                     </div>
                     <div class="space-y-2">
                         <label for="otherName" class="block text-sm font-medium">Other Name</label>
-                        <input id="otherName" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]">
+                        <input id="otherName" name="other_name" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]">
                     </div>
                 </div>
             </div>
@@ -40,11 +48,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="space-y-2">
                     <label for="occupation" class="block text-sm font-medium">Occupation</label>
-                    <input id="occupation" type="text" class="w-full border border-gray-300 rounded-lg p-2" required>
+                    <input id="occupation" name="occupation" type="text" class="w-full border border-gray-300 rounded-lg p-2" required>
                 </div>
                 <div class="space-y-2">
                     <label for="placeOfWork" class="block text-sm font-medium">Place of Work</label>
-                    <input id="placeOfWork" type="text" class="w-full border border-gray-300 rounded-lg p-2" required>
+                    <input id="placeOfWork" name="place_of_work" type="text" class="w-full border border-gray-300 rounded-lg p-2" required>
                 </div>
             </div>
 
@@ -52,11 +60,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="space-y-2">
                     <label for="telephone" class="block text-sm font-medium">Telephone Number</label>
-                    <input id="telephone" type="tel" class="w-full border border-gray-300 rounded-lg p-2" required>
+                    <input id="telephone" name="telephone" type="tel" class="w-full border border-gray-300 rounded-lg p-2" required>
                 </div>
                 <div class="space-y-2">
                     <label for="email" class="block text-sm font-medium">Email Address</label>
-                    <input id="email" type="email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
+                    <input id="email" name="email" type="email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-[#04481b]" required>
                 </div>
             </div>
 
@@ -73,6 +81,11 @@
                 <button type="submit" class="bg-[#04481b] text-white px-4 py-2 rounded hover:bg-[#00923f]">Save and Continue</button>
             </div>
         </form>
+
+        <p style="text-align: center;">
+            <a href="/accounts/logout" style="color: red;">Logout</a>
+          </p>
+      </div>
     </div>
 </main>
     

@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Application - COET{% endblock %}
+
+{% block content %}
+
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
+    <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
+    <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Application</h1>
+    </div>
+  </div>
+
+ <!-- Contact Content -->
+ <main class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto bg-white rounded shadow p-6">
+        <h1 class="text-2xl font-bold text-[#000051] mb-6">Declaration</h1>
+        {% for message in messages %}
+            <h5 style="color: red">{{message}}</h5>
+        {% endfor %}
+        <div id="alert" class="hidden mb-6 p-4 bg-green-100 border border-green-500 text-green-800 rounded">
+          Form submitted successfully
+        </div>
+        <form id="declarationForm" class="space-y-6" method="post" action="/apply/7/">
+          {% csrf_token %}
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <label for="fullName" class="block font-medium">I,</label>
+              <input
+                id="fullName"
+                type="text"
+                class="block w-full border border-gray-300 rounded p-2"
+                required
+              />
+            </div>
+            <p class="text-gray-700">
+              Make this declaration in good faith believing all to be true and correct. If any of the information supplied here is found to be false, the university should withdraw the provisional admission that might be offered to me based on these information.
+            </p>
+            <div class="space-y-2">
+              <label class="block font-medium">Do you consent to this declaration?</label>
+              <div class="flex items-center space-x-4">
+                <label class="flex items-center space-x-2">
+                  <input type="radio" name="consent" value="yes" required />
+                  <span>Yes</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="radio" name="consent" value="no" required />
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="space-y-4">
+            <h3 class="text-lg font-semibold">Please indicate evidence of payment for the application form</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="bankName" class="block font-medium">Bank Name</label>
+                <input
+                  id="bankName"
+                  type="text"
+                  class="block w-full border border-gray-300 rounded p-2"
+                  required
+                />
+              </div>
+              <div class="space-y-2">
+                <label for="amount" class="block font-medium">Amount</label>
+                <input
+                  id="amount"
+                  type="number"
+                  class="block w-full border border-gray-300 rounded p-2"
+                  required
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="date" class="block font-medium">Date</label>
+                <input
+                  id="date"
+                  type="date"
+                  class="block w-full border border-gray-300 rounded p-2"
+                  required
+                />
+              </div>
+              <div class="space-y-2">
+                <label for="receiptNumber" class="block font-medium">Receipt/Teller number</label>
+                <input
+                  id="receiptNumber"
+                  type="text"
+                  class="block w-full border border-gray-300 rounded p-2"
+                  required
+                />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label for="heardFrom" class="block font-medium">How did you hear about this programme?</label>
+              <select
+                id="heardFrom"
+                class="block w-full border border-gray-300 rounded p-2"
+                required
+              >
+                <option value="">--Select--</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Radio Advert">Radio Advert</option>
+                <option value="Newspaper Advert">Newspaper Advert</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="px-4 py-2 bg-[#000051] text-white rounded">
+              Submit
+            </button>
+          </div>
+        </form>
+        <p style="text-align: center;">
+          <a href="/accounts/logout" style="color: red;">Logout</a>
+        </p>
+    </div>
+    </div>
+</main>
+    
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/javascript" src="{% static 'js/apply7.js' %}"></script>
+{% endblock %}
+

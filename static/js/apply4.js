@@ -1,9 +1,9 @@
-document.getElementById('entry-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    console.log('Form submitted:', data);
-  });
+// document.getElementById('entry-form').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     const formData = new FormData(event.target);
+//     const data = Object.fromEntries(formData);
+//     console.log('Form submitted:', data);
+//   });
 
   const inputs = document.querySelectorAll('input[type="number"]');
   inputs.forEach(input => {

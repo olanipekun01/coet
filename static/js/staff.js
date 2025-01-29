@@ -8,6 +8,7 @@ const staffMembers = [
     email: "@achievers.edu.ng, ",
     phone: "+234 803 666 9825",
     image: "prof_ayodele_sa.jpg",
+    bio: "The minimum duration of each of the programmes is ten (10) semesters for students admitted to 100 level through the UTME and eight (8) and six (6) semesters for those admitted into 200 and 300 level respectively by Direct Entry.  A student that fails to graduate at the end of normal academic session will not be allowed to exceed a total of 15 semesters in the case of UTME entrants and 13 and 11 semesters in the case of candidates admitted through Direct Entry to 200 and 300 level respectively."
   },
   {
     name: "Engr. Dr. Oluwole John FAMORIJI (Associate Professor)",
@@ -16,6 +17,7 @@ const staffMembers = [
     email: "eie@achievers.edu.ng, famoriji.oj@achievers.edu.ng",
     phone: "+234 816 441 9471",
     image: "engr_Oluwole_jf.png",
+    bio: "The minimum duration of each of the programmes is ten (10) semesters for students admitted to 100 level through the UTME and eight (8) and six (6) semesters for those admitted into 200 and 300 level respectively by Direct Entry.  A student that fails to graduate at the end of normal academic session will not be allowed to exceed a total of 15 semesters in the case of UTME entrants and 13 and 11 semesters in the case of candidates admitted through Direct Entry to 200 and 300 level respectively."
   },
   {
     name: "Engr. Prof. B. Kareem",
@@ -24,6 +26,7 @@ const staffMembers = [
     email: "@achievers.edu.ng",
     phone: "+234 803 373 7251",
     image: "engr_prof_kareem.png",
+    bio: "The minimum duration of each of the programmes is ten (10) semesters for students admitted to 100 level through the UTME and eight (8) and six (6) semesters for those admitted into 200 and 300 level respectively by Direct Entry.  A student that fails to graduate at the end of normal academic session will not be allowed to exceed a total of 15 semesters in the case of UTME entrants and 13 and 11 semesters in the case of candidates admitted through Direct Entry to 200 and 300 level respectively."
   },
   {
     name: "Engr. Prof. Sesan Peter Ayodeji",
@@ -32,6 +35,7 @@ const staffMembers = [
     email: "@achievers.edu.ng",
     phone: "+234 803 670 9782",
     image: "prof_sesan_pa.jpg",
+    bio: "The minimum duration of each of the programmes is ten (10) semesters for students admitted to 100 level through the UTME and eight (8) and six (6) semesters for those admitted into 200 and 300 level respectively by Direct Entry.  A student that fails to graduate at the end of normal academic session will not be allowed to exceed a total of 15 semesters in the case of UTME entrants and 13 and 11 semesters in the case of candidates admitted through Direct Entry to 200 and 300 level respectively."
   },
   {
     name: "Professor David Akinyiwola OPEYEMI",
@@ -40,6 +44,7 @@ const staffMembers = [
     email: "@achievers.edu.ng",
     phone: "+234 803 439 8502",
     image: "prof_david_ao.png",
+    bio: "The minimum duration of each of the programmes is ten (10) semesters for students admitted to 100 level through the UTME and eight (8) and six (6) semesters for those admitted into 200 and 300 level respectively by Direct Entry.  A student that fails to graduate at the end of normal academic session will not be allowed to exceed a total of 15 semesters in the case of UTME entrants and 13 and 11 semesters in the case of candidates admitted through Direct Entry to 200 and 300 level respectively."
   },
 ];
 
@@ -64,15 +69,22 @@ staffMembers.forEach((staff) => {
             <span>${staff.designation}</span>
 
             <span class="text-gray-500">E-MAIL:</span>
-            <a href="mailto:${staff.email}" class="text-blue-600 hover:underline">${staff.email}</a>
+            <a href="mailto:${staff.email}" class="text-[#EF8206] hover:underline">${staff.email}</a>
 
-            <div class="col-span-2 mt-4">
-              <a href="/staff/${staff.name.toLowerCase().replace(/ /g, '-')}" class="text-[#FFA500] hover:text-orange-600 inline-flex items-center">
-                → View Details
-              </a>
-            </div>
+            
+          </div>
+         
+        </div>
+
+        <div class="col-span-2 mt-1 px-5 py-5">
+          <button class="text-[#EF8206] hover:text-orange-600 inline-flex items-center accordion">
+            → View Details
+          </button>
+          <div class="panel hidden">
+            <p>${staff.bio}</p>
           </div>
         </div>
+
       </div>
     </div>
   `;

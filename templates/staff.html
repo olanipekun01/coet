@@ -6,7 +6,7 @@
 
 {% block content %}
 
-  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
+  <div class="relative h-[300px] bg-gradient-to-r from-[#EF8206] to-[#b26104]">
     <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
     <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Staff Directory</h1>
@@ -25,5 +25,7 @@
 
   {% block extra_scripts %}
   <script type="text/javascript" src="{% static 'js/staff.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/accordion.js' %}"></script>
   {% endblock %}
+
 

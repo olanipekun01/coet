@@ -4,22 +4,22 @@ document.getElementById('currentYear').textContent = new Date().getFullYear();
     {
       name: "Department of Biomedical Engineering",
       description: "Lorem ipsum dolor sit amet conse iusto dolorum animi temporibus similique nobis praesentium quasi qui. Accusamus.",
-      image: "/static/assets/engineeringlogo.svg",
+      image: "https://res.cloudinary.com/dztirmlfv/image/upload/v1738530217/engineeringlogobw_b91waz.png",
     },
     {
       name: "Department of Civil and Environmental Engineering",
       description: "Lorem ipsum dolor sit amet conse iusto dolorum animi temporibus similique nobis praesentium quasi qui. Accusamus.",
-      image: "/static/assets/engineeringlogo.svg",
+      image: "https://res.cloudinary.com/dztirmlfv/image/upload/v1738530217/engineeringlogobw_b91waz.png",
     },
     {
       name: "Department of Electrical & Information Engineering",
       description: "Lorem ipsum dolor sit amet conse iusto dolorum animi temporibus similique nobis praesentium quasi qui. Accusamus.",
-      image: "/static/assets/engineeringlogo.svg",
+      image: "https://res.cloudinary.com/dztirmlfv/image/upload/v1738530217/engineeringlogobw_b91waz.png",
     },
     {
       name: "Department of Mechanical and Mechatronics Engineering",
       description: "Lorem ipsum dolor sit amet conse iusto dolorum animi temporibus similique nobis praesentium quasi qui. Accusamus.",
-      image: "/static/assets/engineeringlogo.svg",
+      image: "https://res.cloudinary.com/dztirmlfv/image/upload/v1738530217/engineeringlogobw_b91waz.png",
     },
    
   ];
@@ -38,7 +38,7 @@ document.getElementById('currentYear').textContent = new Date().getFullYear();
         
         <a 
           href="#" 
-          class="text-[#b26104] hover:text-[#EF8206] flex items-center"
+          class="text-[#04481b] hover:text-[#00923f] flex items-center"
         >
           Learn More
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

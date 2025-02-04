@@ -6,7 +6,7 @@
 
 {% block content %}
 
-  <div class="relative h-[300px] bg-gradient-to-r from-[#EF8206] to-[#b26104]">
+  <div class="relative h-[300px] bg-gradient-to-r from-[#04481b] to-[#00923f]">
     <div class="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center mix-blend-overlay"></div>
     <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center text-white">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">About US</h1>
@@ -17,10 +17,10 @@
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="relative">
-          <img src="{% static './assets/lab2.jpg' %}" alt="Faculty Building" class="rounded-lg shadow-lg">
+          <img src="https://res.cloudinary.com/dztirmlfv/image/upload/v1738536137/lab2_qdqfct.jpg" alt="Faculty Building" class="rounded-lg shadow-lg">
         </div>
         <div>
-          <h2 class="text-3xl font-bold text-[#EF8206] mb-6">About the College of Engineering and Technology</h2>
+          <h2 class="text-3xl font-bold text-[#00923f] mb-6">About the College of Engineering and Technology</h2>
           <p class="text-gray-600 mb-4">
             The College of Engineering and Technology (COET) at Achievers University, Owo, is a distinguished center for engineering education, established in 2017 with approval from the National Universities Commission (NUC). Our mission is to produce highly skilled engineers with a broad scientific foundation, practical expertise, and a strong entrepreneurial spirit to contribute to national and global development.
           </p>
@@ -44,25 +44,25 @@
     </div>
   </section>
 
-  <section class="py-5 px-8 bg-[#b26104] text-white text-center flex flex-col items-center">
+  <section class="py-5 px-8 bg-[#04481b] text-white text-center flex flex-col items-center">
     <span class="mb-5">Our programmes are designed to provide a comprehensive blend of theoretical knowledge and hands-on practical training, ensuring graduates are prepared for careers in academia, industry, and research. Students engage in cutting-edge research projects and gain valuable exposure to real-world engineering applications.</span>
-    <a href="/apply" class="bg-[#fff] hover:bg-[#b26104] hover:border-white hover:border-[1px] hover:text-white text-[#b26104] py-2 px-4 rounded">Apply Now</a>
+    <a href="/apply/start/" class="bg-[#fff] hover:bg-[#04481b] hover:border-white hover:border-[1px] hover:text-white text-[#00923f] py-2 px-4 rounded">Apply Now</a>
   </section>
 
-  <section class="py-16 bg-[#EF8206]">
+  <section class="py-16 bg-[#00923f]">
     <div class="container mx-auto px-4">
       <!-- <h2 class="text-3xl font-bold text-center mb-12 text-[#00923f]">Why Choose Us</h2> -->
       <div class="grid md:grid-cols-3 gap-8">
         <div class="group hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
-          <h3 class="font-semibold text-lg mb-2 text-[#b26104]">Philosophy</h3>
+          <h3 class="font-semibold text-lg mb-2 text-[#00923f]">Philosophy</h3>
           <p class="text-gray-600">The College of Engineering and Technology is built on the philosophy of empowering engineers to apply scientific principles to real-life challenges, thereby improving the standard of living and sustaining human society. By integrating theory with practice, we aim to produce well-rounded engineers capable of thriving in a rapidly evolving technological world.</p>
         </div>
         <div class="group hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
-          <h3 class="font-semibold text-lg mb-2 text-[#b26104]">Vision</h3>
+          <h3 class="font-semibold text-lg mb-2 text-[#00923f]">Vision</h3>
           <p class="text-gray-600">To be the best university in Africa and among the world’s leading institutions, fostering excellence in engineering education and innovation.</p>
         </div>
         <div class="group hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
-          <h3 class="font-semibold text-lg mb-2 text-[#b26104]">Mission</h3>
+          <h3 class="font-semibold text-lg mb-2 text-[#00923f]">Mission</h3>
           <p class="text-gray-600">To provide a conducive environment for the development of competent, self-reliant, and globally relevant engineering graduates, equipped to meet the demands of modern industries and society.</p>
         </div>
       </div>
@@ -92,10 +92,10 @@
               
               <a href="/department" id="hiddenLink1" style="display: none;"></a>
          
-              <button onclick="document.getElementById('hiddenLink1').click();" class="bg-[#EF8206] hover:bg-[#b26104] text-white px-4 py-2 rounded">Learn More About Our Programs</button>
+              <button onclick="document.getElementById('hiddenLink1').click();" class="bg-[#04481b] hover:bg-[#00923f] text-white px-4 py-2 rounded">Learn More About Our Programs</button>
             </div>
             <div>
-              <img src="{% static './assets/lab1.jpg' %}" alt="Faculty Building" class="rounded-lg shadow-lg w-full h-auto" />
+              <img src="https://res.cloudinary.com/dztirmlfv/image/upload/v1738530219/lab1_adsfcg.jpg" alt="Faculty Building" class="rounded-lg shadow-lg w-full h-auto" />
             </div>
           </div>
         </div>
@@ -135,12 +135,12 @@
   </section> -->
 
     <!-- Call to Action -->
-    <section class="py-16 bg-[#b26104] text-white text-center">
+    <section class="py-16 bg-[#04481b] text-white text-center">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold mb-4">Ready to Join Us?</h2>
           <p class="text-xl mb-8">At the College of Engineering and Technology, we are committed to nurturing the next generation of engineers who will shape the future and drive progress across industries and societies.</p>
-          <a href="https://apply.achievers.edu.ng" id="hiddenLink" style="display: none;"></a>
-          <button onclick="document.getElementById('hiddenLink').click();" class="bg-white text-[#b26104] hover:bg-gray-100 px-4 py-2 rounded">Apply Now</button>
+          <a href="/apply/start/" id="hiddenLink" style="display: none;"></a>
+          <button onclick="document.getElementById('hiddenLink').click();" class="bg-white text-[#926868] hover:bg-gray-100 px-4 py-2 rounded">Apply Now</button>
         </div>
       </section>
     
